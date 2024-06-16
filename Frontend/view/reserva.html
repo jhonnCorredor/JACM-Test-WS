@@ -110,7 +110,7 @@
             <input class="form-control" type="file" id="formFile">
         </div>
 
-        <button class="agregar" onclick="pasajaeros()"> Agregar pasajero</button>
+        <button class="agregar btn btn-primary" onclick="pasajaeros()"> Agregar pasajero</button>
     </div>
 
     <h3>Lista de pasajeros</h3>
@@ -125,6 +125,8 @@
                     <th>País pasaporte</th>
                     <th>Telefono</th>
                     <th>Foto pasaporte</th>
+                    <th>.</th>
+                    
                 </tr>
             </thead>
             <tbody class="table-group-divider" id="pasajeros">
@@ -132,13 +134,13 @@
             </tbody>
         </table>
 
-        <button class="agregar"> Eliminar pasajero</button>
+        <button class="agregar" onclick="eliminarPasajero()"> Eliminar pasajero</button>
     </div>
 
 
     <div class="reserva">
-        <button onclick="vuelos()"> Regresar a buscar vuelos</button>
-        <button > Confirmar reserva</button>
+        <button class="btn btn-primary" onclick="vuelos()"> Regresar a buscar vuelos</button>
+        <button class="btn btn-primary" onclick="guardarTicket()"> Confirmar reserva</button>
     </div>
 
 
@@ -162,7 +164,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="" alt="">
+                        <img id="imagen" src="" alt="">
                     </div>
                 </div>
             </div>
