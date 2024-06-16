@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+    <link rel="stylesheet" href="../Assets/Css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <h3>Detalles vuelo salida</h3>
+
+    <div class="container-v">
+
+        <div>
+            <label for="">Origen:</label>
+            <label class="info" id="origenS"></label>
+        </div>
+        
+        <div>
+            <label for="">Destino:</label>
+            <label class="info" id="destinoS"></label>
+        </div>
+        
+        <div>
+            <label for="">Tipo de cabina:</label>
+            <label class="info" id="tipo_cabinaS"></label>
+        </div>
+        
+        <div>
+            <label for="">Fecha:</label>
+            <label class="info" id="fechaS"></label>
+        </div>
+        
+        <div>
+            <label for="">Número de vuelo:</label>
+            <label class="info" id="numeroS"></label>
+        </div>
+    </div>
+
+    <div id="regreso" style="visibility: hidden;">
+        <h3>Detalles vuelo Regreso</h3>
+        
+        <div class="container-v">
+            
+            <div>
+                <label for="">Origen:</label>
+                <label class="info" id="origenR"></label>
+            </div>
+            
+            <div>
+                <label for="">Destino:</label>
+                <label class="info" id="destinoR"></label>
+            </div>
+            
+            <div>
+                <label for="">Tipo de cabina:</label>
+                <label class="info" id="tipo_cabinaR"></label>
+            </div>
+        
+            <div>
+                <label for="">Fecha:</label>
+                <label class="info" id="fechaR"></label>
+            </div>
+            
+            <div>
+                <label for="">Número de vuelo:</label>
+                <label class="info" id="numeroR"></label>
+            </div>
+        </div>
+    </div>
+
+        
+    <h3>Datos del pasajero</h3>
+    
+    <div class="container">
+        <div class="inputs">
+            <label for="">Nombre</label>
+            <input type="text" id="nombre">
+        </div>
+
+        <div class="inputs">
+            <label for="">Apellido</label>
+            <input type="text" id="apellido">
+        </div>
+
+        <div class="inputs">
+            <label for="">Fecha nacimiento</label>
+            <input type="date" id="birthday">
+        </div class="inputs">
+        
+        <div class="inputs">
+            <label for="">Numero pasporte</label>
+            <input type="number" id="num_pass">
+        </div>
+
+        <div class="inputs">
+            <label for="">Pais del pasaporte</label>
+            <select name="" id="pais_pass"></select>
+        </div>
+
+        <div class="inputs">
+            <label for="">Telefono</label>
+            <input type="number" id="telefono">
+        </div>
+
+        <div class="inputs">
+            <label for="">Foto pasaporte</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+
+        <button class="agregar" onclick="pasajaeros()"> Agregar pasajero</button>
+    </div>
+
+    <h3>Lista de pasajeros</h3>
+    <div class="tables">
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-dark">
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha nacimiento</th>
+                    <th>Número pasaporte</th>
+                    <th>País pasaporte</th>
+                    <th>Telefono</th>
+                    <th>Foto pasaporte</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider" id="pasajeros">
+    
+            </tbody>
+        </table>
+
+        <button class="agregar"> Eliminar pasajero</button>
+    </div>
+
+
+    <div class="reserva">
+        <button onclick="vuelos()"> Regresar a buscar vuelos</button>
+        <button > Confirmar reserva</button>
+    </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Pasaporte</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="pasaporte">
+                    <div>
+                        <div class="inputs">
+                            <label for="">Número pasaporte: </label>
+                            <label id="pass_num"></label>
+                        </div>
+                        <div class="inputs">
+                            <label for="">País pasaporte: </label>
+                            <label id="pass_pais"></label>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        <script src="../js/reserva.js"></script>
+        <script>
+            datosVuelos()
+            countries()
+        </script>
+</body>
+</html>
