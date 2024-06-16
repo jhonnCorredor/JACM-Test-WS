@@ -164,13 +164,11 @@ function eliminarPasajero(){
     try {
         var indexP = localStorage.getItem('indexPasajero')
     
-        pasajeros.splice(indexP, 0)
+        pasajeros.splice(indexP)
 
         alert("Pasajero eliminado.")
 
         tablePasajero()
-
-        console.log(pasajeros);
     } catch (error) {
         alert("Error: "+error)
     }
